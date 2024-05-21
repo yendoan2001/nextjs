@@ -1,19 +1,19 @@
-'use client'
 import Image from "next/image";
-import {Button, Card} from "flowbite-react";
-import {RegisterForm} from "@/app/auth/register/register-form/RegisterForm";
+import {Card} from "flowbite-react";
 import {Stepper} from "@/components/stepper/Stepper";
-import {EnterpriseForm} from "@/app/auth/register/enterprise-form/EnterpriseForm";
-import {VerifyAccount} from "@/app/auth/register/verify-account/VerifyAccount";
-import {MailForm} from "@/app/auth/register/mail-form/MailForm";
-import {useStepperStore} from "@/stores/stepper.store";
+import {RegisterForm} from "@/app/auth/register/register-form/RegisterForm";
+import {Metadata} from "next";
 
+export const metadata: Metadata = {
+    title: "Register",
+    description:
+        "Register Page",
+};
 const Register = () => {
-    const {step} = useStepperStore();
     return (
-        <div className='flex justify-center mt-10'>
-            <Card className="min-w-fit flex justify-center rounded-2xl w-1/3">
-                <div className="flex justify-center items-center">
+        <div className="mt-10 flex justify-center">
+            <Card className="flex min-w-fit w-1/3 justify-center rounded-2xl px-8 py-4">
+                <div className="flex items-center justify-center">
                     <Image
                         src="/images/logo/logo-hpay.png"
                         alt="HPay Logo"
@@ -23,16 +23,19 @@ const Register = () => {
                         priority
                     />
                 </div>
-                <h5 className="text-xl font-semibold text-gray-900 dark:text-white flex justify-center items-center">
+                <h5 className="text-gray-900 flex items-center justify-center text-xl font-semibold">
                     Đăng ký tài khoản HPay Merchant
                 </h5>
                 {/*steps*/}
-                <Stepper title1='Thông tin đăng nhập' title2='Thông tin doanh nghiệp' title3='Xác thực tài khoản'/>
+                <Stepper
+                    title1="Thông tin đăng nhập"
+                    title2="Thông tin doanh nghiệp"
+                    title3="Xác thực tài khoản"
+                />
                 {/*steps*/}
 
                 {/*form*/}
-                {step === 1 ? <RegisterForm/> : step === 2 ? <EnterpriseForm/> : step === 3 ? <VerifyAccount/> :
-                    <MailForm/>}
+                <RegisterForm/>
                 {/*form*/}
             </Card>
         </div>

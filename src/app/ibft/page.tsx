@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import DefaultLayout from "@/components/layout/DefaultLayout";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Ibft",
   description:
-    "Home Page",
+    "Ibft Page",
 };
 
 const CalendarPage = () => {
