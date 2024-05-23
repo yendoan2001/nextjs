@@ -9,15 +9,16 @@ import ButtonPrimary from "@/components/button-primary/ButtonPrimary";
 const LoginPage = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
   return (
-    <div className="flex mt-10 items-center justify-center bg-[#F5F5F8]">
+    <div className="mt-5 flex justify-center bg-[#F5F5F8]">
       <div className="min-w-96 max-w-5xl">
         <div className="shadows-custom my-3 grid grid-cols-1 rounded-[24px] bg-[#fff] md:grid-cols-2">
           <div className="relative hidden md:block">
             <img
               src="/images/image/login-left.png"
-              className="rounded-tr-[20px]"
+              className="absolute left-0 top-0 rounded-tr-[20px]"
               alt="login background left"
             />
+
             <div className="absolute left-0 top-0 p-7">
               <img
                 src="/images/logo/logo-hpay.png"
@@ -107,7 +108,10 @@ const LoginPage = () => {
                 </div>
               )}
               <div className="text-end">
-                <Link href={"forgot-password"} className="text-color-primary-sm">
+                <Link
+                  href={"forgot-password"}
+                  className="text-color-primary-sm"
+                >
                   Quên mật khẩu?
                 </Link>
               </div>
@@ -118,7 +122,7 @@ const LoginPage = () => {
             <div className="mt-[140px] w-[350px] text-start">
               <p className="mb-3 text-sm font-normal text-[#000000]">
                 Trở thành HPay Business
-                <Link href={"/auth/register"} className="text-primary">
+                <Link href={"/auth/register"} className="text-color-primary-sm">
                   {" "}
                   Đăng ký ngay!
                 </Link>

@@ -57,12 +57,12 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <aside
       ref={sidebar}
-      className={`left-0 top-0 z-9999 flex h-screen w-62.5 flex-col overflow-y-hidden bg-white shadow-md duration-300 ease-linear lg:static lg:translate-x-0 ${
+      className={`shadows-custom absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-white duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
         sidebarOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
       {/* <!-- SIDEBAR HEADER --> */}
-      <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
+      <div className="flex items-center justify-between gap-2 px-6 py-2.5 lg:py-3.5">
         <Link href="/">
           <Image
             width={110}
@@ -105,11 +105,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           <div>
             <ul className="mb-6 flex flex-col gap-2">
               {/* <!-- Menu Item home --> */}
-              <li className="px-2">
+              <li className="flex pe-2">
+                <div
+                  className={`me-1 w-[4px] ${pathname === "/" && "rounded-r-lg border-[1px] border-l-4 border-[#FF89E7]"} `}
+                ></div>
                 <Link
-                  href={"/home"}
-                  className={`group relative flex items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
-                    pathname.includes("home") && "bg-gradient-to-r text-white"
+                  href={"/"}
+                  className={`group relative flex w-full items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
+                    pathname === "/" && "bg-gradient-to-r text-white"
                   }`}
                 >
                   <svg
@@ -127,11 +130,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* <!-- Menu Item home --> */}
 
               {/* <!-- Menu Item account --> */}
-              <li className="px-2">
+              <li className="flex pe-2">
+                <div
+                  className={`me-1 w-[4px] ${pathname?.includes("/account") && "rounded-r-lg border-[1px] border-l-4 border-[#FF89E7]"} `}
+                ></div>
                 <Link
                   href={"/account"}
-                  className={`group relative flex items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
-                    pathname.includes("/account") &&
+                  className={`group relative flex w-full items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
+                    pathname?.includes("/account") &&
                     "bg-gradient-to-r text-white"
                   }`}
                 >
@@ -151,11 +157,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* <!-- Menu Item account --> */}
 
               {/* <!-- Menu Item transaction-history --> */}
-              <li className="px-2">
+              <li className="flex pe-2">
+                <div
+                  className={`me-1 w-[4px] ${pathname?.includes("transaction-history") && "rounded-r-lg border-[1px] border-l-4 border-[#FF89E7]"} `}
+                ></div>
                 <Link
                   href={"/transaction-history"}
-                  className={`group relative flex items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
-                    pathname.includes("transaction-history") &&
+                  className={`group relative flex w-full items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
+                    pathname?.includes("transaction-history") &&
                     "bg-gradient-to-r text-white"
                   }`}
                 >
@@ -175,11 +184,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* <!-- Menu Item transaction-history --> */}
 
               {/* <!-- Menu Item bank-account --> */}
-              <li className="px-2">
+              <li className="flex pe-2">
+                <div
+                  className={`me-1 w-[4px] ${pathname?.includes("bank-account") && "rounded-r-lg border-[1px] border-l-4 border-[#FF89E7]"} `}
+                ></div>
                 <Link
                   href={"/bank-account"}
-                  className={`group relative flex items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
-                    pathname.includes("bank-account") &&
+                  className={`group relative flex w-full items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
+                    pathname?.includes("bank-account") &&
                     "bg-gradient-to-r text-white"
                   }`}
                 >
@@ -199,11 +211,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* <!-- Menu Item bank-account --> */}
 
               {/* <!-- Menu Item integration-payment --> */}
-              <li className="px-2">
+              <li className="flex pe-2">
+                <div
+                  className={`me-1 w-[4px] ${pathname?.includes("integration-payment") && "rounded-r-lg border-[1px] border-l-4 border-[#FF89E7]"} `}
+                ></div>
                 <Link
                   href={"/integration-payment"}
-                  className={`group relative flex items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
-                    pathname.includes("integration-payment") &&
+                  className={`group relative flex w-full items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
+                    pathname?.includes("integration-payment") &&
                     "bg-gradient-to-r text-white"
                   }`}
                 >
@@ -224,11 +239,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <li className="flex-grow border-t border-[#E0E0E0]"></li>
 
               {/* <!-- Menu Item withdraw --> */}
-              <li className="px-2">
+              <li className="flex pe-2">
+                <div
+                  className={`me-1 w-[4px] ${pathname?.includes("withdraw") && "rounded-r-lg border-[1px] border-l-4 border-[#FF89E7]"} `}
+                ></div>
                 <Link
                   href={"/withdraw"}
-                  className={`group relative flex items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
-                    pathname.includes("withdraw") &&
+                  className={`group relative flex w-full items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
+                    pathname?.includes("withdraw") &&
                     "bg-gradient-to-r text-white"
                   }`}
                 >
@@ -248,11 +266,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* <!-- Menu Item withdraw --> */}
 
               {/* <!-- Menu Item va-account --> */}
-              <li className="px-2">
+              <li className="flex pe-2">
+                <div
+                  className={`me-1 w-[4px] ${pathname?.includes("va-account") && "rounded-r-lg border-[1px] border-l-4 border-[#FF89E7]"} `}
+                ></div>
                 <Link
                   href={"/va-account"}
-                  className={`group relative flex items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
-                    pathname.includes("va-account") &&
+                  className={`group relative flex w-full items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
+                    pathname?.includes("va-account") &&
                     "bg-gradient-to-r text-white"
                   }`}
                 >
@@ -272,11 +293,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* <!-- Menu Item va-account --> */}
 
               {/* <!-- Menu Item ibft --> */}
-              <li className="px-2">
+              <li className="flex pe-2">
+                <div
+                  className={`me-1 w-[4px] ${pathname?.includes("ibft") && "rounded-r-lg border-[1px] border-l-4 border-[#FF89E7]"} `}
+                ></div>
                 <Link
                   href={"/ibft"}
-                  className={`group relative flex items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
-                    pathname.includes("ibft") && "bg-gradient-to-r text-white"
+                  className={`group relative flex w-full items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
+                    pathname?.includes("ibft") && "bg-gradient-to-r text-white"
                   }`}
                 >
                   <svg
@@ -295,11 +319,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* <!-- Menu Item ibft --> */}
 
               {/* <!-- Menu Item instruct-info --> */}
-              <li className="px-2">
+              <li className="flex pe-2">
+                <div
+                  className={`me-1 w-[4px] ${pathname?.includes("instruct-info") && "rounded-r-lg border-[1px] border-l-4 border-[#FF89E7]"} `}
+                ></div>
                 <Link
                   href={"/instruct-info"}
-                  className={`group relative flex items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
-                    pathname.includes("instruct-info") &&
+                  className={`group relative flex w-full items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
+                    pathname?.includes("instruct-info") &&
                     "bg-gradient-to-r text-white"
                   }`}
                 >
@@ -330,11 +357,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           <li className="flex-grow border-t border-[#E0E0E0]"></li>
           <li className="px-2">
             <Link
-              href={"/auth/register"}
-              className={`group relative flex items-center gap-2.5 rounded-md from-[#76DCFF] to-[#FF89E7] px-4 py-3 font-medium text-black duration-300 hover:bg-gradient-to-r hover:text-white ${
-                pathname.includes("auth/register") &&
-                "bg-gradient-to-r text-white"
-              }`}
+              href={"/auth/login"}
+              className={
+                "  flex items-center gap-2.5 rounded-md px-4 py-3 font-medium text-black duration-300 "
+              }
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

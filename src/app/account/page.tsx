@@ -1,6 +1,7 @@
 import Calendar from "../../components/calender";
 import { Metadata } from "next";
 import DefaultLayout from "@/components/layout/DefaultLayout";
+import Account from "@/pages/account";
 
 export const metadata: Metadata = {
   title: "Account",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 const CalendarPage = () => {
   return (
     <DefaultLayout>
-      <Calendar />
+      <Account/>
     </DefaultLayout>
   );
 };
