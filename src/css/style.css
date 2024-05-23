@@ -5,36 +5,78 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        @apply relative z-1 bg-whiten font-satoshi text-base font-normal text-body;
-    }
+  body {
+    @apply relative z-1 bg-whiten font-satoshi text-base font-normal text-body;
+  }
 }
 
 @layer components {
 }
 
 @layer utilities {
-    /* Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-    .no-scrollbar {
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
-    }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 
-    .chat-height {
-        @apply h-[calc(100vh_-_8.125rem)] lg:h-[calc(100vh_-_5.625rem)];
-    }
+  .chat-height {
+    @apply h-[calc(100vh_-_8.125rem)] lg:h-[calc(100vh_-_5.625rem)];
+  }
 
-    .inbox-height {
-        @apply h-[calc(100vh_-_8.125rem)] lg:h-[calc(100vh_-_5.625rem)];
-    }
+  .inbox-height {
+    @apply h-[calc(100vh_-_8.125rem)] lg:h-[calc(100vh_-_5.625rem)];
+  }
 }
 
 /* third-party libraries CSS */
 
 .tableCheckbox:checked ~ div span {
-    @apply opacity-100;
+  @apply opacity-100;
+}
+
+/* custom css */
+.text-color-primary-sm {
+  color: #4faac1;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-color-gray-sm {
+  color: #898b9a;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-color-gray-base {
+  color: #898b9a;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem; 
+}
+.text-color-gray-base {
+  color: #898b9a;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem; 
+}
+.text-color-black-2xl {
+  color: #1b2837;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-color-black-3xl {
+  color: #1b2837;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.4rem;
+}
+
+.shadows-custom {
+  box-shadow: 0 0 12px 0 #4faac133;
 }

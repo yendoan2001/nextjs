@@ -1,7 +1,9 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import DropdownNotification from "@/components/header/DropdownNotification";
 import DropdownUser from "@/components/header/DropdownUser";
+import { Dropdown } from "flowbite-react";
 
 const Header = (props: {
   sidebarOpen: string | boolean | undefined;
@@ -67,14 +69,38 @@ const Header = (props: {
         <div className="hidden sm:block"></div>
 
         <div className="flex items-center gap-3 2xsm:gap-7">
-          <ul className="flex items-center gap-2 2xsm:gap-4">
-            {/* <!-- Notification Menu Area --> */}
-            <DropdownNotification />
-            {/* <!-- Notification Menu Area --> */}
+          {/* <!-- Notification Menu Area --> */}
+          <DropdownNotification />
+          {/* <!-- Notification Menu Area --> */}
 
-            {/* <!-- Change Language Area --> */}
-            {/* <!-- Change Language Area --> */}
-          </ul>
+          {/* <!-- Change Language Area --> */}
+          <Dropdown
+            label={
+              <div className="flex items-start">
+                <img src="icons/lg-vn.png" alt="lg-vn" />
+                <span className="mx-1">Tiếng việt</span>
+              </div>
+            }
+            inline
+          >
+            <Dropdown.Item>
+              <div className="flex items-start">
+                <img src="icons/lg-vn.png" alt="lg-vn" />
+                <span className="mx-2 text-sm font-normal text-black">
+                  Tiếng việt
+                </span>
+              </div>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <div className="flex items-start">
+                <img src="icons/lg-eng.png" alt="lg-eng" />
+                <span className="mx-2 text-sm font-normal text-black">
+                  Tiếng anh
+                </span>
+              </div>
+            </Dropdown.Item>
+          </Dropdown>
+          {/* <!-- Change Language Area --> */}
 
           {/* <!-- User Area --> */}
           <DropdownUser />
