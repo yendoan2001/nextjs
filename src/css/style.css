@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -46,6 +45,18 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
+.text-color-primary-sm-medium {
+  color: #4faac1;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-color-primary-xl-medium {
+  color: #4faac1;
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+}
 .text-color-gray-sm {
   color: #898b9a;
   font-weight: 400;
@@ -56,13 +67,13 @@
   color: #898b9a;
   font-weight: 500;
   font-size: 1rem;
-  line-height: 1.5rem; 
+  line-height: 1.5rem;
 }
-.text-color-gray-base {
-  color: #898b9a;
-  font-weight: 500;
+.text-color-black-base-normal {
+  color: #1b2837;
+  font-weight: 400;
   font-size: 1rem;
-  line-height: 1.5rem; 
+  line-height: 1.5rem;
 }
 .text-color-black-2xl {
   color: #1b2837;
@@ -79,4 +90,14 @@
 
 .shadows-custom {
   box-shadow: 0 0 12px 0 #4faac133;
+}
+
+.select__control {
+  padding: 7px 5px !important;
+  border-radius: 0.75rem !important;
+}
+.select__multi-value {
+  border-radius: 10px !important;
+  overflow: hidden;
+  background-color: #ecf3f4 !important;
 }

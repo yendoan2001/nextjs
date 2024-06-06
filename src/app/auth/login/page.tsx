@@ -1,6 +1,6 @@
 "use client";
 import ButtonTab from "@/components/button-tab/ButtonTab";
-import Button from "@/components/button/Button";
+import ButtonDefault from "@/components/buttonDefault/ButtonDefault";
 import Input from "@/components/input/Input";
 import React, { useState } from "react";
 import Link from "next/link";
@@ -43,7 +43,7 @@ const LoginPage = () => {
                 {activeTab === 0 ? (
                   <ButtonTab title={"Master Merchant"} />
                 ) : (
-                  <Button
+                  <ButtonDefault
                     title={"Master Merchant"}
                     onClick={() => setActiveTab(0)}
                   />
@@ -51,7 +51,7 @@ const LoginPage = () => {
                 {activeTab === 1 ? (
                   <ButtonTab title={"Sub Merchant"} />
                 ) : (
-                  <Button
+                  <ButtonDefault
                     title={"Sub Merchant"}
                     onClick={() => setActiveTab(1)}
                   />
@@ -115,7 +115,7 @@ const LoginPage = () => {
                   Quên mật khẩu?
                 </Link>
               </div>
-              <div>
+              <div className="mt-5">
                 <ButtonPrimary type={"submit"} title={"Đăng nhập"} />
               </div>
             </form>

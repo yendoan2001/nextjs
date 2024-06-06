@@ -1,63 +1,86 @@
-'use client'
-import {useStepperStore} from "@/stores/stepper.store";
+"use client";
+import { useStepperStore } from "@/stores/stepper.store";
 
 interface Props {
-    title1: string
-    title2: string
-    title3: string
+  title1: string;
+  title2: string;
+  title3: string;
 }
 
 export const Stepper = (props: Props) => {
-    const {title1, title2, title3} = props
-    const {step} = useStepperStore();
-    return (
-        <div>
-            <div className="w-full px-8 py-2">
-                <div className="relative flex items-center justify-around w-full">
-                    <div
-                        className="absolute left-0 top-2/4 h-0.5 w-2/3 translate-x-1/4 border-b-2 border-gray-300 border-dotted"></div>
-                    <div
-                        className="relative size-7 z-10 place-items-center flex justify-center items-center text-white flex-shrink-0 bg-[#4FAAC1] font-medium rounded-full">1
-                    </div>
-                    {step === 1 ?
-                        <div className='relative rounded-2xl p-px bg-gradient-to-r from-[#76DCFF] to-[#FF89E7]'>
-                            <div className="rounded-full bg-white">
-                                <span
-                                    className="size-7 flex justify-center items-center flex-shrink-0 border-3 font-medium text-[#4FAAC1]">2</span>
-                            </div>
-                        </div>
-                        :
-                        <div
-                            className="relative size-7 z-10 place-items-center flex justify-center items-center text-white flex-shrink-0 bg-[#4FAAC1] font-medium rounded-full">2</div>
-                    }
-                    {step === 1 || step === 2 ?
-                        <div className='relative rounded-2xl p-px bg-gradient-to-r from-[#76DCFF] to-[#FF89E7]'>
-                            <div className="rounded-full bg-white">
-                                <span
-                                    className="size-7 flex justify-center items-center flex-shrink-0 border-3 font-medium text-[#4FAAC1]">3</span>
-                            </div>
-                        </div>
-                        :
-                        <div
-                            className="relative size-7 z-10 place-items-center flex justify-center items-center text-white flex-shrink-0 bg-[#4FAAC1] font-medium rounded-full">3</div>
-                    }
-                </div>
+  const { title1, title2, title3 } = props;
+  const { step } = useStepperStore();
+  return (
+    <div>
+      <div className="w-full px-8 py-2">
+        <div className="relative flex w-full justify-around gap-5">
+          <div className="absolute left-0 top-11.5  h-0.5 w-2/3 translate-x-1/4 border-b-2 border-dotted border-gray-300"></div>
+          <div className="z-0 mt-8 flex  min-w-22 max-w-27 flex-col items-center">
+            <div className="z-10 flex size-7 flex-shrink-0 place-items-center items-center justify-center rounded-full bg-[#4FAAC1] font-medium text-white">
+              1
             </div>
-            <ul className="flex flex-row justify-between items-center gap-x-2 max-w-md mx-auto mb-2">
-                <li className="flex flex-col">
-                    <div className="mt-3"><span
-                        className="block text-xs font-medium text-[#4FAAC1]">{title1}</span></div>
-                </li>
-                <li className="flex flex-col">
-
-                    <div className="mt-3"><span
-                        className="block text-xs font-medium text-[#4FAAC1]">{title2}</span></div>
-                </li>
-                <li className="flex flex-col">
-                    <div className="mt-3"><span
-                        className="block text-xs font-medium text-[#4FAAC1]">{title3}</span></div>
-                </li>
-            </ul>
+            <div className="mt-3">
+              <span className="block  text-center text-xs font-medium text-[#4FAAC1]">
+                {title1}
+              </span>
+            </div>
+          </div>
+          {step === 1 ? (
+            <div className="z-0 mt-8 flex  min-w-22 max-w-27 flex-col items-center">
+              <div className="z-1 rounded-2xl bg-gradient-to-r from-[#76DCFF] to-[#FF89E7] p-px">
+                <div className="rounded-full bg-white">
+                  <span className="border-3 flex size-7 flex-shrink-0 items-center justify-center font-medium text-[#4FAAC1]">
+                    2
+                  </span>
+                </div>
+              </div>
+              <div className="my-auto mt-3">
+                <span className="block text-center text-xs font-medium text-[#4FAAC1]">
+                  {title2}
+                </span>
+              </div>
+            </div>
+          ) : (
+            <div className="z-0 mt-8 flex  min-w-22 max-w-27 flex-col items-center">
+              <div className="z-10 flex size-7 flex-shrink-0 place-items-center items-center justify-center rounded-full bg-[#4FAAC1] font-medium text-white">
+                2
+              </div>
+              <div className="mt-3">
+                <span className="block text-center text-xs font-medium text-[#4FAAC1]">
+                  {title2}
+                </span>
+              </div>
+            </div>
+          )}
+          {step === 2 || step === 4 || step === 1 ? (
+            <div className="z-0 mt-8 flex  min-w-22 max-w-27 flex-col items-center">
+              <div className="z-1 rounded-2xl bg-gradient-to-r from-[#76DCFF] to-[#FF89E7] p-px">
+                <div className="rounded-full bg-white">
+                  <span className="border-3 flex size-7 flex-shrink-0 items-center justify-center font-medium text-[#4FAAC1]">
+                    3
+                  </span>
+                </div>
+              </div>
+              <div className="mt-3">
+                <span className="block min-w-25 text-center text-xs font-medium text-[#4FAAC1] ">
+                  {title3}
+                </span>
+              </div>
+            </div>
+          ) : (
+            <div className="z-0 mt-8 flex  min-w-22 max-w-27 flex-col items-center">
+              <div className="z-10 flex size-7 flex-shrink-0 place-items-center items-center justify-center rounded-full bg-[#4FAAC1] font-medium text-white">
+                3
+              </div>
+              <div className="mt-3">
+                <span className="block text-center text-xs font-medium text-[#4FAAC1]">
+                  {title3}
+                </span>
+              </div>
+            </div>
+          )}
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};

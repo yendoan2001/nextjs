@@ -1,5 +1,7 @@
 "use client";
+import { ToastContainer } from "react-toastify";
 import "@/css/style.css";
+import "react-toastify/dist/ReactToastify.css";
 import React, { useEffect, useState } from "react";
 import Loader from "../components/loader";
 import { Inter } from "next/font/google";
@@ -15,13 +17,14 @@ export default function RootLayout({
   // const pathname = usePathname();
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1000);
+    setTimeout(() => setLoading(false), 500);
   }, []);
 
   return (
     <html suppressHydrationWarning={true} lang="en">
       <body className={inter.className}>
         <div>{loading ? <Loader /> : children}</div>
+        <ToastContainer />
       </body>
     </html>
   );

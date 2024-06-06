@@ -10,17 +10,18 @@ const Header = (props: {
   setSidebarOpen: (arg0: boolean) => void;
 }) => {
   return (
-    <header className="sticky top-0 z-999 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
+    <header className="sticky top-0 z-1 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
       <div className="flex flex-grow items-center justify-between px-4 py-2 shadow-2 md:px-6 2xl:px-11">
         <div className="flex items-center gap-2 sm:gap-4 lg:hidden">
           {/* <!-- Hamburger Toggle BTN --> */}
           <button
+            type="button"
             aria-controls="sidebar"
             onClick={(e) => {
               e.stopPropagation();
               props.setSidebarOpen(!props.sidebarOpen);
             }}
-            className="z-99999 block rounded-sm border border-stroke bg-white p-1.5 shadow-sm dark:border-strokedark dark:bg-boxdark lg:hidden"
+            className="z-99999 block rounded-sm border border-stroke bg-white p-1.5 shadow-sm lg:hidden"
           >
             <span className="relative block h-5.5 w-5.5 cursor-pointer">
               <span className="du-block absolute right-0 h-full w-full">
@@ -77,7 +78,13 @@ const Header = (props: {
           <Dropdown
             label={
               <div className="flex items-start">
-                <img src="icons/lg-vn.png" alt="lg-vn" />
+                <Image
+                  src="/icons/lg-vn.png"
+                  alt="lg-vn"
+                  className="h-[23px] w-[33px]"
+                  width={500}
+                  height={500}
+                />
                 <span className="mx-1">Tiếng việt</span>
               </div>
             }
@@ -85,7 +92,13 @@ const Header = (props: {
           >
             <Dropdown.Item>
               <div className="flex items-start">
-                <img src="icons/lg-vn.png" alt="lg-vn" />
+                <Image
+                  src="/icons/lg-vn.png"
+                  alt="lg-vn"
+                  className="h-[23px] w-[33px]"
+                  width={500}
+                  height={500}
+                />
                 <span className="mx-2 text-sm font-normal text-black">
                   Tiếng việt
                 </span>
@@ -93,7 +106,13 @@ const Header = (props: {
             </Dropdown.Item>
             <Dropdown.Item>
               <div className="flex items-start">
-                <img src="icons/lg-eng.png" alt="lg-eng" />
+                <Image
+                  src="/icons/lg-eng.png"
+                  alt="lg-eng"
+                  className="h-[23px] w-[33px]"
+                  width={500}
+                  height={500}
+                />
                 <span className="mx-2 text-sm font-normal text-black">
                   Tiếng anh
                 </span>

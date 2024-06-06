@@ -68,15 +68,17 @@ const ChartThree: React.FC = () => {
     <div className="shadows-custom col-span-12  rounded-lg bg-white px-5 pb-7 pt-2.5 dark:bg-boxdark sm:px-7.5 xl:col-span-5">
       <div className="mb-2">
         <div id="chartThree" className="relative mx-auto flex justify-center">
-          <ReactApexChart
-            options={options}
-            series={state.series}
-            type="donut"
-          />
-          <div className="absolute left-[28%] top-[35%] flex items-center justify-center">
+          <div className=" mt-22 sm:mt-0">
+            <ReactApexChart
+              options={options}
+              series={state.series}
+              type="donut"
+            />
+          </div>
+          <div className="absolute left-1/2 top-[0] -translate-x-1/2 transform sm:top-1/2 sm:-translate-y-1/2">
             <div className="text-center">
               <p className="text-sm font-normal text-[#4FAAC1]">Tổng số dư</p>
-              <h2 className="text-xl font-bold text-[#1B2837] mt-2">
+              <h2 className="mt-2 text-xl font-bold text-[#1B2837]">
                 20.010.111.000 <br /> VNĐ
               </h2>
             </div>
@@ -85,7 +87,7 @@ const ChartThree: React.FC = () => {
       </div>
 
       <div className="-mx-8 gap-y-3">
-        <div className="w-full px-8">
+        <div className="w-full px-16 sm:px-8">
           <div className="flex w-full items-center">
             <span className="mr-2 block h-4 w-full max-w-4 rounded-full bg-[#71E77A]"></span>
             <p className="flex w-full justify-between text-sm font-medium text-black dark:text-white">
@@ -100,7 +102,7 @@ const ChartThree: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="mt-3 w-full px-8">
+        <div className="mt-3 w-full px-16 sm:px-8">
           <div className="flex w-full items-center">
             <span className="mr-2 block h-4 w-full max-w-4 rounded-full bg-[#FF8C24]"></span>
             <p className="flex w-full justify-between text-sm font-medium text-black dark:text-white">
@@ -114,7 +116,7 @@ const ChartThree: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="mt-3 w-full px-8">
+        <div className="mt-3 w-full px-16 sm:px-8">
           <div className="flex w-full items-center">
             <span className="mr-2 block h-4 w-full max-w-4 rounded-full bg-[#FA5472]"></span>
             <p className="flex w-full justify-between text-sm font-medium text-black dark:text-white">
@@ -129,7 +131,7 @@ const ChartThree: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="flex justify-center ">
+        <div className="flex justify-center mt-5">
           <div className="w-[121px]">
             <ButtonPrimary title="Rút tiền" />
           </div>

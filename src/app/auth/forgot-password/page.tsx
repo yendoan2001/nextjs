@@ -1,11 +1,11 @@
 "use client";
 import { useState } from "react";
 import ButtonPrimary from "@/components/button-primary/ButtonPrimary";
-import Button from "@/components/button/Button";
+import ButtonDefault from "@/components/buttonDefault/ButtonDefault";
 import Input from "@/components/input/Input";
 
 const ForgotPassword = () => {
-  const [status, setStatus] = useState<boolean>(true);
+  const [status, setStatus] = useState<boolean>(false);
   return (
     <div className="mt-5 flex items-center justify-center bg-[#F5F5F8]">
       <div className="w-[670px] min-w-96 max-w-3xl">
@@ -23,7 +23,7 @@ const ForgotPassword = () => {
               <div className="mt-10 w-full">
                 <div className="flex justify-center">
                   <img
-                    src="/images/logo/mail.logo.png"
+                    src="/images/logo/mail-logo.png"
                     className="w-[153px]"
                     alt="email change password"
                   />
@@ -42,7 +42,10 @@ const ForgotPassword = () => {
                 </p>
                 <p className="mt-5 text-center text-base font-normal text-[#1B2837]">
                   Chưa nhận được mail.{" "}
-                  <a href="#" className="text-base font-semibold text-[#FF1717]">
+                  <a
+                    href="#"
+                    className="text-base font-semibold text-[#FF1717]"
+                  >
                     Bấm vào đây!
                   </a>
                 </p>
@@ -64,7 +67,9 @@ const ForgotPassword = () => {
                     status="default"
                     type="email"
                   />
-                  <ButtonPrimary title={"Xác nhận"} type={"submit"} />
+                  <div className="mt-5">
+                    <ButtonPrimary title={"Xác nhận"} type={"submit"} />
+                  </div>
                 </form>
               </div>
             )}
@@ -77,7 +82,10 @@ const ForgotPassword = () => {
                 </span>
                 <div className="flex-auto border-[1px] border-[#7FC4D6]"></div>
               </div>
-              <Button href="/auth/login" title={"Đăng nhập bằng tài khoản"} />
+              <ButtonDefault
+                href="/auth/login"
+                title={"Đăng nhập bằng tài khoản"}
+              />
               <p className="mb-5 mt-20 text-center text-[15px] font-normal text-[#A6C5CD]">
                 Hotline hỗ trợ 24/7: 1900 0128
               </p>
